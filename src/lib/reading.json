@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Project Hail Mary",
+        "author": "Andy Weir",
+        "image": "/images/project_hail_mary.jpg"
+    },
+    {
+        "title": "I Who Have Never Known Men",
+        "author": "Jacqueline Harpman",
+        "image": "/images/I_who_have_never.jpg"
+    },
+    {
+        "title": "Small Things Like These",
+        "author": "Claire Keegan",
+        "image": "/images/small_things_like_these.jpg"
+    },
+    {
+        "title": "The Glass Castle",
+        "author": "Jeannette Walls",
+        "image": "/images/the_glass_castle.jpg"
+    }
+]
