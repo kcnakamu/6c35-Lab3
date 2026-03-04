@@ -1,13 +1,3 @@
-<nav class="Menu">
-    <ul>
-        <li><a href=".">Home</a></li>
-        <li><a href="contact"  class="current">Contact</a></li>
-        <li><a href="projects">Projects</a></li>
-        <li><a href="resume">Resume</a></li>
-        <li><a href="https://github.com/kcnakamu" target="_blank">Github Profile</a></li>
-    </ul>
-</nav>
-
 <h1>Contact</h1>
 <form action="mailto:38799557+kcnakamu@users.noreply.github.com" method="get">
     <label>

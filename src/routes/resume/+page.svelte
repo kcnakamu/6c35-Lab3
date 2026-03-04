@@ -1,12 +1,3 @@
-<nav class="Menu">
-    <ul>
-        <li><a href=".">Home</a></li>
-        <li><a href="contact">Contact</a></li>
-        <li><a href="projects">Projects</a></li>
-        <li><a href="resume"  class="current">Resume</a></li>
-        <li><a href="https://github.com/kcnakamu" target="_blank">Github Profile</a></li>
-    </ul>
-</nav>
 <h1>Resume</h1>
 <!-- Create article for resume -->
 <article id="Resume">

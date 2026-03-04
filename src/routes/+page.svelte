@@ -4,15 +4,6 @@
   import books from "$lib/reading.json";
   import ReadingItem from "$lib/ReadingItem.svelte";
 </script>
-<nav class="Menu">
-    <ul>
-        <li><a href="." class="current">Home</a></li>
-        <li><a href="contact">Contact</a></li>
-        <li><a href="projects">Projects</a></li>
-        <li><a href="resume">Resume</a></li>
-        <li><a href="https://github.com/kcnakamu" target="_blank">Github Profile</a></li>
-    </ul>
-</nav>
 
 <h1>Karen Nakamura</h1>
 
