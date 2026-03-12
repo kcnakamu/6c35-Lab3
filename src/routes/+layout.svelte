@@ -87,7 +87,6 @@ li {
     <ul>
         {#each pages as p}
         <li>
-            <a href={base + p.url}
             <a 
             href={p.url.startsWith("http") ? p.url :base + p.url}
             class:current={p.url === "/" 
@@ -95,8 +94,8 @@ li {
                 : $page.url.pathname.startsWith(base + p.url)}
             target={p.url.startsWith("http") ? "_blank": null}
             >
-  {p.title}
-</a>
+            {p.title}
+            </a>
 
         </li>
         {/each}

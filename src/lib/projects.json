@@ -1,62 +1,65 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam asperiores accusantium enim minus repudiandae, facere eaque, sed quas quibusdam rerum, quo cupiditate quia a nobis? Eaque aliquam deserunt nesciunt neque."
+        "title": "Persuasive or Deceptive Visualization?",
+        "image": "images/deceptive.png",
+        "year": 2026,
+        "description": "Building two opposing visualizations from the same dataset to explore how design choices shape narrative.",
+        "story": "Washington D.C. has one of the highest abortion rates per capita in the nation — but does that make it a leader, or is the framing itself misleading? This project explores how the same dataset can tell two completely opposite stories depending on what you choose to show. By building both a persuasive \"for\" and \"against\" visualization around D.C.'s abortion statistics, the project reveals how design choices like axis manipulation, chart type, and selective statistics can quietly shape a reader's conclusions without them even noticing."
     },
     {
-        "title": "Fugit eius tenetur vel?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Reiciendis odit dolores, obcaecati officia praesentium quia omnis explicabo aliquam amet est, aspernatur blanditiis recusandae quisquam eligendi ut consectetur veritatis numquam commodi, atque laboriosam ad impedit iure. Consequatur, quis optio!"
+        "title": "Visualization Critique & Redesign",
+        "year": 2026,
+        "image": "images/redesign.png",
+        "description": "Critiquing the NYT's Covid spiral chart and redesigning it for honest year-to-year comparison.",
+        "story": "The NYT's Covid spiral chart was visually striking — but the spiral itself was a lie. Each month grew longer as time passed, making the same spike look sharper in earlier years than later ones. Through three sketch iterations, this project works toward a redesign that keeps the original's key insight (2021 was far worse than 2020) while making honest comparisons possible on a clean shared axis."
     },
     {
-        "title": "In, maiores dicta. Ullam!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Animi alias sed veritatis, perspiciatis cumque culpa in maiores pariatur illo dicta dolores esse quam ratione corporis iusto harum quos, ullam expedita reprehenderit modi itaque. Quisquam porro delectus itaque natus?"
+        "title": "JPMorganChase Data for Good Hackathon",
+        "year": 2025,
+        "image": "images/hackathon.png",
+        "description": "24-hour hackathon analyzing student entrepreneurship data to empower youth from under-resourced communities.",
+        "story": "At JPMorganChase's NYC headquarters, my team had 24 hours to make sense of years of Entrepreneurial Mindset Index data for NFTE — an organization supporting young entrepreneurs who don't always get a fair shot. Through clustering and correlation analysis, we found that skills like creativity and problem-solving tend to grow together, which pointed us toward a simple idea: intervene early, personalize the curriculum, and connect students with alumni who've walked the same path. It was a reminder that data, when pointed in the right direction, can actually change someone's trajectory."
     },
     {
-        "title": "Sunt odio atque vitae.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Aut dicta cum molestias quia fugit? Consequuntur quis quaerat, fugiat voluptatum, ducimus eos beatae ut in deserunt culpa molestiae tempore numquam officiis facilis fuga deleniti. Impedit quos nihil culpa animi!"
+        "title": "GTL Mexico — Beautiful Patterns Program",
+        "year": 2024,
+        "image": "images/gtl-mexico.png",
+        "description": "Teaching web development and computational thinking to middle and high school students in Mexico, culminating in a live website presentation.",
+        "story": "By the end of the week, every student had a website they built themselves — and they had an audience to show it to. Getting there meant teaching not just HTML and CSS, but the underlying computational thinking that makes coding click: breaking a problem down, spotting patterns, and debugging with patience. Watching students present their own websites to a room full of people, explaining their design choices with pride, made it clear that the real outcome was never the website itself — it was the confidence that came with it."
     },
     {
-        "title": "Officiis voluptatum beatae maiores.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Sed illo ipsam consequatur aliquid dolore! Totam maiores suscipit beatae quas officiis nemo, minus adipisci? Et sequi eos modi. Et autem nisi iste ratione iusto sequi, corporis asperiores blanditiis nihil."
+        "title": "EduCare — HackHarvard 2023",
+        "year": 2023,
+        "image": "images/hackharv.png",
+        "description": "An AI-powered doctor-patient note-taking tool that transcribes appointments in real-time so doctors can focus on their patients.",
+        "story": "Every doctor has been there — nodding along while secretly scrambling to write everything down, half-present in the conversation and half-buried in documentation. At HackHarvard 2024, we asked what healthcare might look like if doctors never had to choose between listening and note-taking. The result was EduCare: a real-time transcription system that captures conversations, highlights key medical terms, and generates structured notes automatically. The goal was simple — give doctors back their full attention, and give patients the feeling that someone is actually in the room with them."
     },
     {
-        "title": "Officiis dolorum est obcaecati?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Dolorem nostrum fugit obcaecati, aut, est facere similique repudiandae autem, aliquid voluptates minus. Ea, officia. Ullam esse, accusantium eaque veniam reprehenderit est quibusdam illo ea quaerat laudantium atque et eius."
+        "title": "LLM Alignment — Anti-Jailbreak Benchmarking",
+        "year": 2025,
+        "image": "images/tinyllama.png",
+        "description": "Benchmarking and improving anti-jailbreak defenses on TinyLlama-1.1B by evaluating three multi-stage safety pipelines combining DPO, activation steering, and constitutional AI.",
+        "story": "The baseline model failed every single jailbreak attempt thrown at it — a 100% attack success rate. The question was whether you could fix that without breaking everything else. We tested three different defense pipelines on TinyLlama-1.1B, combining techniques like Direct Preference Optimization, activation steering, and Constitutional AI with targeted model editing. The best approach brought the attack success rate down to just 1%, proving that even small open-weight models can be meaningfully aligned — you just have to be deliberate about how you stack the defenses."
     },
     {
-        "title": "Doloribus maxime reiciendis voluptatem!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Perferendis quod est eaque quam, necessitatibus corrupti odit vero praesentium obcaecati consectetur sed rerum assumenda suscipit alias omnis error soluta maiores, quo libero, iusto quisquam. Placeat facere itaque quas vero!"
+    "title": "Boston311 Insight Dashboard",
+    "year": 2023,
+    "image": "images/boston-311.png",
+    "description": "Visualizing patterns in Boston's 311 service requests to identify underserved neighborhoods and infrastructure bottlenecks.",
+    "story": "A pothole reported in Back Bay gets fixed in two days. The same pothole in Roxbury sits for three weeks. We pulled years of Boston 311 service request data to find out whether that gap was real — and it was. This project maps response time disparities across neighborhoods, overlays them with demographic data, and asks an uncomfortable question: who does the city actually prioritize? The dashboard doesn't offer answers, but it makes the patterns impossible to ignore."
     },
     {
-        "title": "Ratione, natus vitae! Similique.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Vel repellat tenetur facere maiores consequatur optio ratione aspernatur debitis veniam, quisquam repellendus dolore totam assumenda architecto officia ullam voluptatibus veritatis porro. Rerum molestiae asperiores, fuga magnam assumenda non voluptatem?"
+    "title": "Sign Language Translator",
+    "year": 2022,
+    "image": "images/asl.png",
+    "description": "A real-time ASL fingerspelling recognition tool built with computer vision and a custom CNN trained on hand landmark data.",
+    "story": "Most speech-to-text tools work great — if you can speak. This project started from a simple frustration: why is real-time translation so one-sided? Using MediaPipe for hand landmark detection and a custom CNN trained on ASL fingerspelling gestures, we built a browser-based tool that translates hand signs into text in real time. It is far from perfect, and the dataset limitations showed, but it was a first step toward communication tools that don't assume everyone interacts with technology the same way."
     },
     {
-        "title": "Debitis, sed? At, voluptates.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Labore accusamus officia cumque doloribus, inventore voluptates veniam accusantium excepturi porro? Fugit voluptates alias, veritatis, aut pariatur labore tenetur asperiores vel dolores nulla sint quibusdam molestiae, atque eveniet numquam odio."
-    },
-    {
-        "title": "Aliquid dicta sed dolorem.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Alias earum ullam officiis distinctio quam asperiores accusamus officia, eligendi debitis? Eos recusandae exercitationem nostrum praesentium aliquid consequatur molestiae. Corporis similique reiciendis tenetur quas maxime quo molestiae sunt autem impedit."
-    },
-    {
-        "title": "Sequi aut illum nam!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Quod exercitationem necessitatibus reprehenderit deleniti nulla ut in optio omnis dolor autem veniam eligendi quasi, dicta enim! Omnis iste iure impedit, animi perferendis tempore magnam magni nostrum quibusdam laudantium fugit!"
-    },
-    {
-        "title": "Dolorum possimus quas iste.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Vitae omnis ipsum quidem vel explicabo praesentium veritatis officia dolores eligendi error est laudantium sint, iusto labore amet deleniti rem sunt nemo, dolor pariatur. Ex officia corporis sunt libero vitae."
+    "title": "RateMyDining — MIT Edition",
+    "year": 2024,
+    "image": "images/mit-dining.png",
+    "description": "A crowdsourced dining hall review platform built for MIT students, with live meal ratings and allergen filtering.",
+    "story": "Every MIT student has a strong opinion about Next House dining versus Maseeh, but there was nowhere to put that opinion that actually mattered. We built RateMyDining as a lightweight platform where students could rate meals in real time, filter by allergens, and see trending dishes across all dining halls. What started as a joke project turned into something people actually used — and the data quickly confirmed what everyone already suspected about the mac and cheese."
     }
 ]
