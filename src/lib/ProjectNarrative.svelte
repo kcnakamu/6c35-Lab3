@@ -1,6 +1,7 @@
 <script>
     import Scrolly from "svelte-scrolly";
     import projects from "$lib/projects.json";
+    import { base } from "$app/paths";
     let scrollyProgress = 0;
     let sorted_projects = projects.sort((a, b) => a.year - b.year)
     let progressPerProject = 100 / sorted_projects.length;
@@ -21,7 +22,7 @@
         <svelte:fragment slot="viz">
             <div>
                 <h3>{sorted_projects[activeProjectIdx].year}</h3>
-                <img src={sorted_projects[activeProjectIdx].image} alt="Current Project Image">
+                <img src="{base}/{sorted_projects[activeProjectIdx].image}" alt="Current Project Image">
             </div>
         </svelte:fragment>
     </Scrolly>
