@@ -2,10 +2,48 @@
   import projects from "$lib/projects.json";
   import Project from "$lib/Project.svelte";
   import ProjectNarrative from "$lib/ProjectNarrative.svelte";
+  import Bar from '$lib/Bar.svelte';
+
 
   let years = projects.map(proj => proj.year)
   let range = Math.max(...years) - Math.min(...years);
+
+  import { onMount } from 'svelte';
+  import * as d3 from 'd3';
+
+  let wrangled = [];
+  let rawData = [];
+  let percentages = [];
+
+  onMount(async () => {
+      rawData = await d3.json('/lab6_example.json');
+      const totalLines = d3.sum(rawData, d => d.lines);
+      wrangled = d3.rollups(
+          rawData,
+          v => d3.sum(v, d => d.lines),
+          d => d.language
+      );
+      percentages = d3.rollups(
+          rawData,
+          v => d3.sum(v, d => d.lines) / totalLines * 100,
+          d => d.language
+      );
+  });
+
+  $: barData = d3.rollups(projects, v => v.length, d => d.year)
+    .sort(([a],[b]) => a-b)
+    .map(([year, count]) => ({ label: String(year), value: count }));
+
+
 </script>
+<!-- <section>
+    <h2>Data wrangling result</h2>
+    <pre>{JSON.stringify(wrangled, null, 2)}</pre>
+    <pre>{JSON.stringify(percentages, null, 2)}</pre>
+</section> -->
+
+<Bar data={barData}/>
+
 
 <h1>{projects.length} Projects over {range} Years</h1>
 

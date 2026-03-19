@@ -22,7 +22,7 @@
     },
     {
         "title": "GTL Mexico — Beautiful Patterns Program",
-        "year": 2024,
+        "year": 2026,
         "image": "images/gtl-mexico.png",
         "description": "Teaching web development and computational thinking to middle and high school students in Mexico, culminating in a live website presentation.",
         "story": "By the end of the week, every student had a website they built themselves — and they had an audience to show it to. Getting there meant teaching not just HTML and CSS, but the underlying computational thinking that makes coding click: breaking a problem down, spotting patterns, and debugging with patience. Watching students present their own websites to a room full of people, explaining their design choices with pride, made it clear that the real outcome was never the website itself — it was the confidence that came with it."
@@ -36,7 +36,7 @@
     },
     {
         "title": "LLM Alignment — Anti-Jailbreak Benchmarking",
-        "year": 2025,
+        "year": 2026,
         "image": "images/tinyllama.png",
         "description": "Benchmarking and improving anti-jailbreak defenses on TinyLlama-1.1B by evaluating three multi-stage safety pipelines combining DPO, activation steering, and constitutional AI.",
         "story": "The baseline model failed every single jailbreak attempt thrown at it — a 100% attack success rate. The question was whether you could fix that without breaking everything else. We tested three different defense pipelines on TinyLlama-1.1B, combining techniques like Direct Preference Optimization, activation steering, and Constitutional AI with targeted model editing. The best approach brought the attack success rate down to just 1%, proving that even small open-weight models can be meaningfully aligned — you just have to be deliberate about how you stack the defenses."
