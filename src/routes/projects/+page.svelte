@@ -42,10 +42,9 @@
     <pre>{JSON.stringify(percentages, null, 2)}</pre>
 </section> -->
 
-<Bar data={barData}/>
-
-
 <h1>{projects.length} Projects over {range} Years</h1>
+
+<Bar data={barData}/>
 
 <p>Scroll down to see my a timeline of my projects and how they've contributed to my professional and personal life</p>
 

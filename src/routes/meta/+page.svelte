@@ -15,18 +15,12 @@
         }));
     });
 
+    $: data = d3.rollups(
+        locData,
+        v => d3.sum(v, d => d.length),
+        d => d.type
+    ).map(([type, count]) => ({ label: type, value: count }));
 
-    let rawData = [];
-    let data = [];
-
-    onMount(async () => {
-        rawData = await d3.json('/lab6_example.json');
-        data = d3.rollups(
-            rawData,
-            v => d3.sum(v, d => d.lines),
-            d => d.language
-        ).map(([language, lines]) => ({ label: language, value: lines }));
-    });
 </script>
 
 <section> 
