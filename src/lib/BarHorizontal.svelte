@@ -6,7 +6,7 @@
 
     export let data = [];
 
-    let margin = { top: 40, right: 50, bottom: 40, left: 100 };
+    let margin = { top: 30, right: 150, bottom: 40, left: 100 };
     let innerWidth  = width  - margin.left - margin.right;
     let innerHeight = height - margin.top  - margin.bottom;
 
@@ -32,6 +32,15 @@
     }
 
     $: maxBar = d3.greatest(data, d => d.value);
+
+    $: if (xAxis && yAxis) {
+        d3.select(xAxis).call(
+            d3.axisBottom(xScale)
+            .ticks(Math.min(d3.max(data, d => d.value), 10))
+        );
+        d3.select(yAxis).call(d3.axisLeft(yScale));
+    }
+
 
 </script>
 
@@ -91,20 +100,11 @@
                     stroke="currentColor"
                     stroke-width="2"
                 />
-                <!-- leader line -->
-                <line
-                    x1={xScale(maxBar.value) * 0.7}
-                    y1={yScale(maxBar.label)}
-                    x2={xScale(maxBar.value) * 0.7}
-                    y2={yScale(maxBar.label) - 20}
-                    stroke="currentColor"
-                    stroke-width="1"
-                />
                 <!-- annotation text at end of leader line -->
                 <text
-                    x={xScale(maxBar.value) * .7}
-                    text-anchor="middle"
-                    y={yScale(maxBar.label) - 30}
+                    x={xScale(maxBar.value) + 10}
+                    text-anchor="start"
+                    y={yScale(maxBar.label) + yScale.bandwidth() / 2}
                     dominant-baseline="middle"
                     class="annotation">
                     Language with most lines
