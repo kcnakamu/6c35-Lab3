@@ -5,6 +5,7 @@
     let height = 300;
 
     export let data = [];
+    export let title = "";
 
     let margin = { top: 30, right: 150, bottom: 40, left: 100 };
     let innerWidth  = width  - margin.left - margin.right;
@@ -51,7 +52,7 @@
             y={margin.top / 2}
             text-anchor="middle"
             class="chart-title">
-            Lines of Code by Language
+            {title}
         </text>
        
 

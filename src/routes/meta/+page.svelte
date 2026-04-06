@@ -192,7 +192,7 @@
         </g>
     </svg>
 
-    <BarHorizontal data={barData} />
+    <BarHorizontal data={barData} title={clickedCommits.length === 0 ? "Lines of Code: Website Breakdown" : "Lines of Code: Selected Commits"} />
 
 
 </section>
