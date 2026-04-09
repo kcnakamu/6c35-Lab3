@@ -2,6 +2,7 @@
     import { base } from '$app/paths';
     import { onMount } from 'svelte';
     import BarHorizontal from '../../lib/BarHorizontal.svelte';
+    import LineChart from '../../lib/LineChart.svelte';
     import * as d3 from 'd3';
     import { computePosition, autoPlacement, offset } from '@floating-ui/dom';
 
@@ -44,6 +45,7 @@
     ).map(([type, count]) => ({ label: type, value: count }));
 
     let width = 1000, height = 600;
+    let svg;
 
     $: [minDate, maxDate] = d3.extent(commits.map(d => d.date));
     $: maxDatePlusOne = new Date(maxDate);
@@ -90,6 +92,36 @@
         .domain(lineRange)
         .range([5, 30]);
 
+    $: brushSelection = null;
+
+    function brushed (evt) {
+        brushSelection = evt.selection;
+    }
+
+    function isCommitBrushed(commit) {
+        if (!brushSelection) {
+            return false;
+        }
+
+        let min = {x: brushSelection[0][0], y: brushSelection[0][1]};
+        let max = {x: brushSelection[1][0], y: brushSelection[1][1]};
+        let x = xScale(commit.date);
+        let y = yScale(commit.hourFrac);
+        return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
+    }
+
+    $: brushedCommits = brushSelection ? commits.filter(isCommitBrushed) : [];
+    $: selectedCommits = Array.from(new Set([...clickedCommits, ...brushedCommits]));
+
+
+    $: {
+        d3.select(svg).call(d3.brush()
+            .extent([[usableArea.left, usableArea.top], [usableArea.right, usableArea.bottom]])
+            .on("start brush end", brushed)); 
+        d3.select(svg).selectAll(".dots, .overlay ~ *").raise();
+    }
+
+
     let hoveredIndex = -1;
     $: hoveredCommit = commits[hoveredIndex] ?? hoveredCommit ?? {};
 
@@ -130,7 +162,7 @@
     let clickedCommits = [];
 
 
-    $: selectedLines = (clickedCommits.length > 0 ? clickedCommits.flatMap(d => d.lines) : locData);
+    $: selectedLines = (selectedCommits.length > 0 ? selectedCommits : commits).flatMap(d => d.lines);
 
     $: selectedCounts = d3.rollup(
         selectedLines,
@@ -141,6 +173,25 @@
     $: allTypes = Array.from(new Set(locData.map(d => d.type)));
 
     $: barData = allTypes.map(type =>  ({ label: String(type), value: selectedCounts.get(type) || 0 }));
+
+    let linesByDate = [];
+    $: {
+        const rolled = d3.rollups(
+            locData,
+            v => v.length,
+            d => d3.timeDay.floor(d.datetime)
+        ).map(([date, count]) => ({ date, count }));
+
+        // 2. Get an array of all days covered by the data
+        const [minDate, maxDate] = d3.extent(rolled, d => d.date);
+        const allDays = d3.timeDays(minDate, d3.timeDay.offset(maxDate, 1));
+
+        // 3. Build linesByDate by filling all undefined dates with 0 counts
+        linesByDate = allDays.map(date => ({
+            date,
+            count: rolled.find(d => d.date.getTime() === date.getTime())?.count ?? 0
+        }));
+    }
 
 
 </script>
@@ -170,7 +221,7 @@
     </dl>
 
 
-    <svg viewBox="0 0 {width} {height}">
+    <svg viewBox="0 0 {width} {height}" bind:this={svg}>
         <g transform="translate(0, {usableArea.bottom})" bind:this={xAxis} />
         <g transform="translate({usableArea.left}, 0)" bind:this={yAxis} />
         <g class="gridlines" transform="translate({usableArea.left}, 0)" bind:this={yAxisGridlines} />
@@ -182,7 +233,7 @@
                 	on:mouseenter={evt => dotInteraction(index, evt)}
 	                on:mouseleave={evt => dotInteraction(index, evt)}
                     on:click={ evt => dotInteraction(index, evt) }
-                    class:selected={ clickedCommits.includes(commit) }
+                    class:selected={ selectedCommits.includes(commit) }
                     cx={ xScale(commit.datetime) }
                     cy={ yScale(commit.hourFrac) }
                     r={ rScale(commit.totalLines) }
@@ -192,8 +243,8 @@
         </g>
     </svg>
 
-    <BarHorizontal data={barData} title={clickedCommits.length === 0 ? "Lines of Code: Website Breakdown" : "Lines of Code: Selected Commits"} />
-
+    <BarHorizontal data={barData} title={selectedCommits.length === 0 ? "Lines of Code: Website Breakdown" : `Lines of Code: ${selectedCommits.length} Selected Commits`} />
+    <LineChart data={linesByDate} />
 
 </section>
 
