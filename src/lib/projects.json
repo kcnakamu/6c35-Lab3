@@ -1,5 +1,12 @@
 [
     {
+        "title": "bikewatching",
+        "image": "images/bikewatch.png",
+        "year": 2026,
+        "description": "An immersive, interactive map visualization of bike traffic in the Boston area during different times of the day. Link: https://kcnakamu.github.io/bikewatching/",
+        "story": "Boston's bike-sharing network generates hundreds of thousands of trips every month. This project visualizes BlueBikes station traffic across the Boston and Cambridge area, letting users explore how demand shifts throughout the day."
+    },
+    {
         "title": "Persuasive or Deceptive Visualization?",
         "image": "images/deceptive.png",
         "year": 2026,
