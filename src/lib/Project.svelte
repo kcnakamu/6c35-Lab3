@@ -4,12 +4,28 @@
 </script>
 
 <article>
+  {#if data.link}
+    <h2>
+      <a href={data.link} target="_blank" rel="noopener noreferrer" class="title-link">
+        {data.title}
+      </a>
+    </h2>
+  {:else}
     <h2>{data.title}</h2>
+  {/if}
+
+  {#if data.link}
+    <a href={data.link} target="_blank" rel="noopener noreferrer">
+      <img src="{base}/{data.image}" alt="Project Image">
+    </a>
+  {:else}
     <img src="{base}/{data.image}" alt="Project Image">
-    <p class="proj-info">
-      <span class="year">{data.year} |</span>
-      {data.description}
-    </p>
+  {/if}
+
+  <p class="proj-info">
+    <span class="year">{data.year} |</span>
+    {data.description}
+  </p>
 </article>
 
 <style>

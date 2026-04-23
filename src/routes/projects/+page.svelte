@@ -46,7 +46,7 @@
 
 <Bar data={barData}/>
 
-<p>Scroll down to see my a timeline of my projects and how they've contributed to my professional and personal life</p>
+<p class="intro">Scroll down to see my a timeline of my projects and how they've contributed to my professional and personal life</p>
 
 <ProjectNarrative />
 
@@ -62,5 +62,9 @@
 <style>
   .outro {
     margin-bottom: 40px;
+  }
+
+  .intro {
+    padding-top: 40px;
   }
 </style>
