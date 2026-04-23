@@ -272,6 +272,7 @@
         font-weight: bold;
         margin-bottom: 0.5em;
         text-align: left;
+        
         }
 
         .data-table th,
@@ -283,6 +284,7 @@
 
         .data-table th {
         background-color: #f0f0f0;
+        color: #000;
     }
 
 
